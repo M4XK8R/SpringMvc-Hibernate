@@ -1,6 +1,6 @@
-package com.maxkor.feature.users.data.service;
+package com.maxkor.users.service;
 
-import com.maxkor.feature.users.data.entity.User;
+import com.maxkor.users.model.User;
 import java.util.List;
 
 public interface UserService {

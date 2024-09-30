@@ -1,14 +1,20 @@
-package com.maxkor.app;
+package com.maxkor.users;
 
-import com.maxkor.feature.users.data.entity.User;
-import com.maxkor.feature.users.data.service.UserService;
-import com.maxkor.feature.users.data.service.UserServiceImpl;
-
+import com.maxkor.users.config.AppConfig;
+import com.maxkor.users.model.User;
+import com.maxkor.users.service.UserService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
 
   public static void main(String[] args) {
-    UserService userService = new UserServiceImpl();
+
+    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
+        AppConfig.class
+    );
+    UserService userService = context.getBean(
+        UserService.class
+    );
 
     for (int i = 1; i <= 5; i++) {
       userService.upsert(

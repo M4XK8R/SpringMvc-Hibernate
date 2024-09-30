@@ -1,18 +1,22 @@
-package com.maxkor.feature.users.data.service;
+package com.maxkor.users.service;
 
-import com.maxkor.feature.users.data.dao.UserDao;
-import com.maxkor.feature.users.data.dao.UserDaoHibernateJpaImpl;
-import com.maxkor.feature.users.data.entity.User;
+import com.maxkor.users.dao.UserDao;
+import com.maxkor.users.model.User;
 import java.util.List;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+@Service
 public class UserServiceImpl implements UserService {
 
   private final UserDao userDao;
 
-  public UserServiceImpl() {
-    this.userDao = new UserDaoHibernateJpaImpl();
+  public UserServiceImpl(UserDao userDao) {
+    this.userDao = userDao;
   }
 
+
+  @Transactional
   @Override
   public void upsert(User user) {
     if (user.getId() == User.UNDEFINED_ID) {
@@ -22,16 +26,19 @@ public class UserServiceImpl implements UserService {
     }
   }
 
+  @Transactional
   @Override
   public void removeById(long id) {
     userDao.removeById(id);
   }
 
+  @Transactional
   @Override
   public void removeAll() {
     userDao.cleanTable();
   }
 
+  @Transactional(readOnly = true)
   @Override
   public List<User> getAll() {
     return userDao.getAll();

@@ -1,6 +1,6 @@
-package com.maxkor.feature.users.data.dao;
+package com.maxkor.users.dao;
 
-import com.maxkor.feature.users.data.entity.User;
+import com.maxkor.users.model.User;
 import java.util.List;
 
 public interface UserDao {

@@ -1,4 +1,4 @@
-package com.maxkor.feature.users.data.entity;
+package com.maxkor.users.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

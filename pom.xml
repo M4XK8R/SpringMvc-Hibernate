@@ -22,14 +22,35 @@
 
   <dependencies>
 
-    <!--    hibernate-entitymanager-->
+    <!--    <dependency>-->
+    <!--      <groupId>jakarta.persistence</groupId>-->
+    <!--      <artifactId>jakarta.persistence-api</artifactId>-->
+    <!--      <version>3.0.0</version>-->
+    <!--    </dependency>-->
+
+    <!-- spring-orm -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <!--      <version>6.1.13</version>-->
+      <version>5.3.39</version>
+    </dependency>
+
+    <!--    <dependency>-->
+    <!--      <groupId>org.hibernate</groupId>-->
+    <!--      <artifactId>hibernate-core</artifactId>-->
+    <!--      <version>5.6.3.Final</version>-->
+    <!--    </dependency>-->
+
+    <!--    &lt;!&ndash;    hibernate-entitymanager&ndash;&gt;-->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
       <version>5.6.15.Final</version>
+<!--      <version>5.1.2.Final</version>-->
     </dependency>
 
-    <!-- hibernate-jpa-api -->
+    <!--     hibernate-jpa-api -->
     <dependency>
       <groupId>org.hibernate.javax.persistence</groupId>
       <artifactId>hibernate-jpa-2.1-api</artifactId>
@@ -47,7 +68,8 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>6.1.13</version>
+<!--      <version>6.1.13</version>-->
+      <version>5.3.39</version>
     </dependency>
 
     <!-- thymeleaf-spring5 -->

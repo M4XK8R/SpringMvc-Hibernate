@@ -1,4 +1,4 @@
-package com.maxkor.core.base.util;
+package com.maxkor.users.util;
 
 public final class LoggingUtil {
 
