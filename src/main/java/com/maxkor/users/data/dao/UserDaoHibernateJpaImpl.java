@@ -1,6 +1,6 @@
-package com.maxkor.users.dao;
+package com.maxkor.users.data.dao;
 
-import com.maxkor.users.model.User;
+import com.maxkor.users.data.model.User;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;

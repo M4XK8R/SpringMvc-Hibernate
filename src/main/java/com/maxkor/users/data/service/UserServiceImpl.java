@@ -1,12 +1,13 @@
-package com.maxkor.users.service;
+package com.maxkor.users.data.service;
 
-import com.maxkor.users.dao.UserDao;
-import com.maxkor.users.model.User;
+import com.maxkor.users.data.dao.UserDao;
+import com.maxkor.users.data.model.User;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
   private final UserDao userDao;
@@ -16,7 +17,6 @@ public class UserServiceImpl implements UserService {
   }
 
 
-  @Transactional
   @Override
   public void upsert(User user) {
     if (user.getId() == User.UNDEFINED_ID) {
@@ -26,13 +26,11 @@ public class UserServiceImpl implements UserService {
     }
   }
 
-  @Transactional
   @Override
   public void removeById(long id) {
     userDao.removeById(id);
   }
 
-  @Transactional
   @Override
   public void removeAll() {
     userDao.cleanTable();

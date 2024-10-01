@@ -1,4 +1,4 @@
-package com.maxkor.users.model;
+package com.maxkor.users.data.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -49,24 +49,12 @@ public class User {
     return id;
   }
 
-  public void setId(long id) {
-    this.id = id;
-  }
-
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
   public String getSecondName() {
     return secondName;
-  }
-
-  public void setSecondName(String secondName) {
-    this.secondName = secondName;
   }
 
   @Override

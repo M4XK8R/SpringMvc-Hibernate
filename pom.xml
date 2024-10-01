@@ -12,64 +12,35 @@
   <url>http://maven.apache.org</url>
 
   <properties>
+    <!--    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
+    <spring.version>5.3.39</spring.version>
   </properties>
 
-  <build>
-    <finalName>SpringMvc-Hibernate</finalName>
-  </build>
 
   <dependencies>
 
-    <!--    <dependency>-->
-    <!--      <groupId>jakarta.persistence</groupId>-->
-    <!--      <artifactId>jakarta.persistence-api</artifactId>-->
-    <!--      <version>3.0.0</version>-->
-    <!--    </dependency>-->
-
-    <!-- spring-orm -->
+    <!--    servlet-api-->
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-orm</artifactId>
-      <!--      <version>6.1.13</version>-->
-      <version>5.3.39</version>
-    </dependency>
-
-    <!--    <dependency>-->
-    <!--      <groupId>org.hibernate</groupId>-->
-    <!--      <artifactId>hibernate-core</artifactId>-->
-    <!--      <version>5.6.3.Final</version>-->
-    <!--    </dependency>-->
-
-    <!--    &lt;!&ndash;    hibernate-entitymanager&ndash;&gt;-->
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-entitymanager</artifactId>
-      <version>5.6.15.Final</version>
-<!--      <version>5.1.2.Final</version>-->
-    </dependency>
-
-    <!--     hibernate-jpa-api -->
-    <dependency>
-      <groupId>org.hibernate.javax.persistence</groupId>
-      <artifactId>hibernate-jpa-2.1-api</artifactId>
-      <version>1.0.2.Final</version>
-    </dependency>
-
-    <!--    mysql-connector-j-->
-    <dependency>
-      <groupId>com.mysql</groupId>
-      <artifactId>mysql-connector-j</artifactId>
-      <version>9.0.0</version>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
     </dependency>
 
     <!-- spring-webmvc -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-<!--      <version>6.1.13</version>-->
-      <version>5.3.39</version>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!-- spring-orm -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${spring.version}</version>
     </dependency>
 
     <!-- thymeleaf-spring5 -->
@@ -77,6 +48,27 @@
       <groupId>org.thymeleaf</groupId>
       <artifactId>thymeleaf-spring5</artifactId>
       <version>3.1.2.RELEASE</version>
+    </dependency>
+
+    <!--    hibernate-entity -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>5.6.15.Final</version>
+    </dependency>
+
+    <!--     hibernate-jpa -->
+    <dependency>
+      <groupId>org.hibernate.javax.persistence</groupId>
+      <artifactId>hibernate-jpa-2.1-api</artifactId>
+      <version>1.0.2.Final</version>
+    </dependency>
+
+    <!--    mysql-connector -->
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>9.0.0</version>
     </dependency>
 
     <!--  test  -->
@@ -87,4 +79,8 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <finalName>SpringMvc-Hibernate</finalName>
+  </build>
 </project>

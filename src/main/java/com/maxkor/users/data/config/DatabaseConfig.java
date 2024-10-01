@@ -1,4 +1,4 @@
-package com.maxkor.users.config;
+package com.maxkor.users.data.config;
 
 import java.util.Objects;
 import java.util.Properties;
@@ -18,13 +18,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @PropertySource("classpath:db.properties")
-@ComponentScan("com.maxkor.users")
+@ComponentScan("com.maxkor.users.data")
 @EnableTransactionManagement
-public class AppConfig {
+public class DatabaseConfig {
 
   private final Environment environment;
 
-  public AppConfig(Environment environment) {
+  public DatabaseConfig(Environment environment) {
     this.environment = environment;
   }
 
@@ -50,7 +50,7 @@ public class AppConfig {
     factoryBean.setDataSource(getDataSource());
     factoryBean.setJpaProperties(getHibernateProperties());
     factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-    factoryBean.setPackagesToScan("com.maxkor.users.model");
+    factoryBean.setPackagesToScan("com.maxkor.users.data.model");
     return factoryBean;
   }
 
